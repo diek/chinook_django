@@ -12,8 +12,14 @@ class Artist(models.Model):
 
 
 class Album(models.Model):
-    title = models.CharField(max_length=160),
+    title = models.CharField(max_length=160)
     artist = models.ForeignKey(Artist, models.PROTECT)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ('title',)
 
 
 class Composer(models.Model):
@@ -52,9 +58,9 @@ class Track(models.Model):
     album = models.ForeignKey(Album, models.PROTECT)
     media_type = models.ForeignKey(MediaType, models.PROTECT)
     genre = models.ForeignKey(Genre, models.PROTECT)
-    composer_name = models.CharField(max_length=220),
-    milliseconds = models.PositiveSmallIntegerField()
-    byte = models.PositiveSmallIntegerField()
+    composer_name = models.CharField(max_length=220, default=None, blank=True, null=True)
+    milliseconds = models.PositiveIntegerField(default=0)
+    byte_s = models.PositiveIntegerField(default=0)
     unit_price = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):

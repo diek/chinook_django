@@ -26,10 +26,10 @@ class Invoice(models.Model):
     customer = models.ForeignKey(Customer, models.PROTECT)
     invoice_date = models.DateTimeField()
     billing_address = models.CharField(max_length=70)
-    billing_City = models.CharField(max_length=40)
-    billing_tate = models.CharField(max_length=40)
-    billing_Country = models.CharField(max_length=40)
-    billing_postal_code = models.CharField(max_length=10)
+    billing_city = models.CharField(max_length=40)
+    billing_state = models.CharField(max_length=40, default=None, blank=True, null=True)
+    billing_country = models.CharField(max_length=40)
+    billing_postal_code = models.CharField(max_length=10, default=None, blank=True, null=True)
     total = models.DecimalField(max_digits=6, decimal_places=2)
 
 
@@ -38,3 +38,18 @@ class InvoiceLine(models.Model):
     track = models.ForeignKey('music.Track', models.PROTECT)
     unit_price = models.DecimalField(max_digits=6, decimal_places=2)
     quantity = models.PositiveSmallIntegerField()
+
+
+class Playlist(models.Model):
+    play_list = models.CharField(max_length=60)
+    customer = models.ManyToManyField(Customer)
+
+    def __str__(self):
+        return '{}'.format(self.play_list)
+
+    class Meta:
+        ordering = ('play_list',)
+
+
+class PlaylistTrack(models.Model):
+    artist = models.ForeignKey('music.Track')
