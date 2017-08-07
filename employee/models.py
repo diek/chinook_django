@@ -5,7 +5,7 @@ class Employee(models.Model):
     first_name = models.CharField(max_length=40)
     last_name = models.CharField(max_length=40)
     title = models.CharField(max_length=20)
-    reports_to = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
+    reports_to = models.ForeignKey('self', default=None, blank=True, null=True)
     birth_date = models.DateTimeField()
     hire_date = models.DateTimeField()
     address = models.CharField(max_length=70)
