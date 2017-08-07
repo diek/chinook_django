@@ -11,8 +11,8 @@ Coded using:
 
 Data for Customers
 ----------------
-- Data originally from Luis Rocha's :
-`Chinook Database <https://github.com/lerocha/chinook-database>`_  
-- Table and column names changed for Django:  
+- Data originally from Luis Rocha's :\newline
+`Chinook Database <https://github.com/lerocha/chinook-database>`_\newline
+- Table and column names changed for Django:\newline 
 `Chinook Populate Table Scripts <https://github.com/diek/chinook_django-table_scripts>`_
 
