@@ -18,7 +18,7 @@ class Employee(models.Model):
     email = models.CharField(max_length=60)
 
     def __str__(self):
-        return '{}, {}'.format(self.last_name, self.first_name)
+        return '{} {}'.format(self.last_name, self.first_name)
 
     class Meta:
         ordering = ('last_name',)

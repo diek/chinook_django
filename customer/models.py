@@ -43,13 +43,10 @@ class InvoiceLine(models.Model):
 class Playlist(models.Model):
     play_list = models.CharField(max_length=60)
     customer = models.ManyToManyField(Customer)
+    track = models.ManyToManyField('music.Track')
 
     def __str__(self):
         return '{}'.format(self.play_list)
 
     class Meta:
         ordering = ('play_list',)
-
-
-class PlaylistTrack(models.Model):
-    artist = models.ForeignKey('music.Track')
