@@ -1,5 +1,5 @@
 ============================
-The chinook database and Django
+The Chinook database and Django
 ============================
 
 Coded using:
@@ -11,5 +11,8 @@ Coded using:
 
 Data for Customers
 ----------------
-- Data from Luis Rocha's :
+- Data originally from Luis Rocha's :
 `Chinook Database <https://github.com/lerocha/chinook-database>`_  
+- table and column names changed for Django: 
+`Chinook Populate Table Scripts <https://github.com/diek/chinook_django-table_scripts>`_
+
